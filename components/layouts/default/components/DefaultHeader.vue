@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="py-6 header-container ease-in-out bg-white sticky top-0 transition-colors bg-white bg-opacity-50"
-  >
+  <header class="header-container">
     <div class="container px-6 mx-auto flex items-center">
       <nuxt-link to="/" class="flex gap-4 items-center">
         <img
@@ -16,6 +14,11 @@
         <nuxt-link to="/projects">프로젝트</nuxt-link>
         <nuxt-link to="/projects">멤버</nuxt-link>
         <nuxt-link to="/projects">채용</nuxt-link>
+      </div>
+      <div class="md:hidden">
+        <v-btn icon x-large outlined>
+          <v-icon>mdi-menu</v-icon>
+        </v-btn>
       </div>
     </div>
   </header>
@@ -32,11 +35,12 @@ export default Vue.extend({
 <style scoped lang="scss">
 .header-container {
   backdrop-filter: blur(20px);
+  @apply md:py-4 lg:py-6 ease-in-out bg-white sticky top-0 transition-colors bg-white bg-opacity-50;
 }
 .items-area {
   a {
     @apply text-3xl font-bold;
   }
-  @apply flex gap-16;
+  @apply md:flex hidden gap-16;
 }
 </style>
