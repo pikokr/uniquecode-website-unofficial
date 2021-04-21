@@ -1,5 +1,10 @@
 <template>
-  <div></div>
+  <div class="lg:w-2/3 px-6 mx-auto mt-12 flex">
+    <div class="text-7xl font-bold opacity-70">
+      <p>당신의 디스코드에</p>
+      <p>유니크한 재미를 더.</p>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
