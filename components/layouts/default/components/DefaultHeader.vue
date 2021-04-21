@@ -8,7 +8,7 @@
 
 <style scoped>
 .header-container {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px) saturate(100%);
 }
 </style>
 
