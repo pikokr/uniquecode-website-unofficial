@@ -1,6 +1,6 @@
 <template>
   <header class="header-container">
-    <div class="container px-6 mx-auto flex items-center">
+    <div class="lg:w-2/3 px-6 mx-auto flex items-center">
       <nuxt-link to="/" class="flex gap-4 items-center">
         <img
           :src="require('@/assets/img/logo.png')"
@@ -35,7 +35,7 @@ export default Vue.extend({
 <style scoped lang="scss">
 .header-container {
   backdrop-filter: blur(20px);
-  @apply md:py-4 lg:py-6 ease-in-out bg-white sticky top-0 transition-colors bg-white bg-opacity-50;
+  @apply md:py-4 py-4 lg:py-6 ease-in-out bg-white sticky top-0 transition-colors bg-white bg-opacity-50;
 }
 .items-area {
   a {
