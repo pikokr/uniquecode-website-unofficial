@@ -2,15 +2,16 @@
   <div>
     <header class="header-container">
       <div class="lg:w-2/3 px-6 mx-auto flex items-center">
-        <nuxt-link to="/" class="flex gap-4 items-center">
-          <img
-            :src="require('@/assets/img/logo.png')"
-            class="w-12 h-12"
-            alt="Logo"
-          />
-          <span class="text-3xl font-bold">Uniquecode</span>
-        </nuxt-link>
-        <div class="flex-grow" />
+        <div class="flex-grow">
+          <nuxt-link to="/" class="inline-flex gap-4 items-center">
+            <img
+              :src="require('@/assets/img/logo.png')"
+              class="w-12 h-12"
+              alt="Logo"
+            />
+            <span class="text-3xl font-bold">Uniquecode</span>
+          </nuxt-link>
+        </div>
         <div class="items-area">
           <nuxt-link v-for="(x, y) in nav" :key="y" :to="x.to">{{
             x.text
