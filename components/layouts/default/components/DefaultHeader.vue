@@ -6,12 +6,6 @@
   </header>
 </template>
 
-<style scoped>
-.header-container {
-  backdrop-filter: blur(20px);
-}
-</style>
-
 <script lang="ts">
 import Vue from 'vue'
 
@@ -19,3 +13,9 @@ export default Vue.extend({
   name: 'DefaultHeader',
 })
 </script>
+
+<style scoped>
+.header-container {
+  backdrop-filter: blur(20px);
+}
+</style>
