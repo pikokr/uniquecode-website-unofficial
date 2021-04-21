@@ -12,9 +12,9 @@
         </nuxt-link>
         <div class="flex-grow" />
         <div class="items-area">
-          <nuxt-link to="/projects">프로젝트</nuxt-link>
-          <nuxt-link to="/projects">멤버</nuxt-link>
-          <nuxt-link to="/projects">채용</nuxt-link>
+          <nuxt-link v-for="(x, y) in nav" :key="y" :to="x.to">{{
+            x.text
+          }}</nuxt-link>
         </div>
         <div class="md:hidden">
           <v-btn icon x-large outlined @click.stop="drawer = true">
@@ -24,7 +24,7 @@
       </div>
     </header>
     <v-navigation-drawer v-model="drawer" right temporary absolute>
-      <div class="flex p-4">
+      <div class="flex p-4 pb-0">
         <div class="flex gap-2 items-center">
           <img
             :src="require('@/assets/img/logo.png')"
@@ -38,6 +38,13 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </div>
+      <v-list dense nav>
+        <v-list-item v-for="(x, y) in nav" :key="y" :to="x.to">
+          <v-list-item-content>
+            <v-list-item-title>{{ x.text }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
   </div>
 </template>
@@ -49,6 +56,20 @@ export default Vue.extend({
   name: 'DefaultHeader',
   data: () => ({
     drawer: false,
+    nav: [
+      {
+        text: '프로젝트',
+        to: '/projects',
+      },
+      {
+        text: '멤버',
+        to: '/members',
+      },
+      {
+        text: '채용',
+        to: '/jobs',
+      },
+    ],
   }),
 })
 </script>
