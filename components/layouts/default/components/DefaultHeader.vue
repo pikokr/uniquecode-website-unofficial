@@ -12,7 +12,11 @@
         <span class="text-3xl font-bold">Uniquecode</span>
       </nuxt-link>
       <div class="flex-grow" />
-      right
+      <div class="items-area">
+        <nuxt-link to="/projects">프로젝트</nuxt-link>
+        <nuxt-link to="/projects">멤버</nuxt-link>
+        <nuxt-link to="/projects">채용</nuxt-link>
+      </div>
     </div>
   </header>
 </template>
@@ -25,8 +29,14 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .header-container {
   backdrop-filter: blur(20px);
+}
+.items-area {
+  a {
+    @apply text-3xl font-bold;
+  }
+  @apply flex gap-16;
 }
 </style>
