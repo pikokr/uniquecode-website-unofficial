@@ -1,27 +1,45 @@
 <template>
-  <header class="header-container">
-    <div class="lg:w-2/3 px-6 mx-auto flex items-center">
-      <nuxt-link to="/" class="flex gap-4 items-center">
-        <img
-          :src="require('@/assets/img/logo.png')"
-          class="w-12 h-12"
-          alt="Logo"
-        />
-        <span class="text-3xl font-bold">Uniquecode</span>
-      </nuxt-link>
-      <div class="flex-grow" />
-      <div class="items-area">
-        <nuxt-link to="/projects">프로젝트</nuxt-link>
-        <nuxt-link to="/projects">멤버</nuxt-link>
-        <nuxt-link to="/projects">채용</nuxt-link>
+  <div>
+    <header class="header-container">
+      <div class="lg:w-2/3 px-6 mx-auto flex items-center">
+        <nuxt-link to="/" class="flex gap-4 items-center">
+          <img
+            :src="require('@/assets/img/logo.png')"
+            class="w-12 h-12"
+            alt="Logo"
+          />
+          <span class="text-3xl font-bold">Uniquecode</span>
+        </nuxt-link>
+        <div class="flex-grow" />
+        <div class="items-area">
+          <nuxt-link to="/projects">프로젝트</nuxt-link>
+          <nuxt-link to="/projects">멤버</nuxt-link>
+          <nuxt-link to="/projects">채용</nuxt-link>
+        </div>
+        <div class="md:hidden">
+          <v-btn icon x-large outlined @click.stop="drawer = true">
+            <v-icon>mdi-menu</v-icon>
+          </v-btn>
+        </div>
       </div>
-      <div class="md:hidden">
-        <v-btn icon x-large outlined>
-          <v-icon>mdi-menu</v-icon>
+    </header>
+    <v-navigation-drawer v-model="drawer" right temporary absolute>
+      <div class="flex p-4">
+        <div class="flex gap-2 items-center">
+          <img
+            :src="require('@/assets/img/logo.png')"
+            class="w-8 h-8"
+            alt="Logo"
+          />
+          <span class="text-xl font-bold">Uniquecode</span>
+        </div>
+        <v-spacer />
+        <v-btn icon @click.stop="drawer = false">
+          <v-icon>mdi-close</v-icon>
         </v-btn>
       </div>
-    </div>
-  </header>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script lang="ts">
@@ -29,6 +47,9 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'DefaultHeader',
+  data: () => ({
+    drawer: false,
+  }),
 })
 </script>
 
