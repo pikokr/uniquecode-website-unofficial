@@ -1,7 +1,8 @@
 <template>
   <div>
     <header
-      class="header-container w-full fixed top-0 z-50"
+      class="header-container w-full fixed top-0"
+      style="z-index: 99998"
       :class="{ scrolled: !view.atTopOfPage }"
     >
       <div class="lg:w-2/3 px-6 mx-auto flex items-center">
@@ -27,7 +28,13 @@
         </div>
       </div>
     </header>
-    <v-navigation-drawer v-model="drawer" right temporary absolute>
+    <v-navigation-drawer
+      v-model="drawer"
+      right
+      temporary
+      absolute
+      style="z-index: 99999"
+    >
       <div class="flex p-4 pb-0">
         <div class="flex gap-2 items-center">
           <img
