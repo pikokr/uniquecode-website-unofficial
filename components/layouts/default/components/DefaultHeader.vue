@@ -1,6 +1,9 @@
 <template>
   <div>
-    <header class="header-container">
+    <header
+      class="header-container w-full fixed top-0 z-50"
+      :class="{ scrolled: !view.atTopOfPage }"
+    >
       <div class="lg:w-2/3 px-6 mx-auto flex items-center">
         <div class="flex-grow">
           <nuxt-link to="/" class="inline-flex gap-4 items-center">
@@ -47,6 +50,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <div class="h-28" />
   </div>
 </template>
 
@@ -71,15 +75,35 @@ export default Vue.extend({
         to: '/jobs',
       },
     ],
+    view: {
+      atTopOfPage: true,
+    },
   }),
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  methods: {
+    handleScroll() {
+      if (window.pageYOffset > 0) {
+        if (this.view.atTopOfPage) this.view.atTopOfPage = false
+      } else {
+        !this.view.atTopOfPage && (this.view.atTopOfPage = true)
+      }
+    },
+  },
 })
 </script>
 
 <style scoped lang="scss">
 .header-container {
-  backdrop-filter: blur(20px);
-  @apply md:py-4 py-4 lg:py-6 ease-in-out bg-white sticky top-0 transition-colors bg-white bg-opacity-50;
+  @apply md:py-4 py-4 lg:py-6 ease-in-out transition-colors;
+  &.scrolled {
+    backdrop-filter: blur(20px);
+    @apply bg-opacity-50 bg-white;
+  }
 }
+
 .items-area {
   a {
     @apply text-3xl font-bold;
