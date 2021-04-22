@@ -2,7 +2,7 @@
   <div>
     <div
       class="absolute top-0 w-full h-full"
-      style="background: rgba(112, 112, 112, 0.15)"
+      style="background: rgba(112, 112, 112, 0.122)"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
