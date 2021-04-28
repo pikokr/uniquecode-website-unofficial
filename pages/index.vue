@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="absolute top-0 w-full h-full"
+      class="absolute top-0 w-full h-full flex flex-col"
       style="background: rgba(112, 112, 112, 0.122)"
     >
       <svg
@@ -21,7 +21,9 @@
           class="hero-path"
         />
       </svg>
-      <div class="lg:w-2/3 px-6 mx-auto mt-12 mt-36">
+      <div
+        class="lg:w-2/3 px-6 mx-auto mt-12 mt-36 flex flex-col justify-between"
+      >
         <div class="flex justify-center gap-4">
           <div class="text-7xl font-bold opacity-70">
             <p>당신의 디스코드에</p>
@@ -31,6 +33,13 @@
             class="z-20"
             style="font-size: 200px; color: #738adb"
             :icon="['fab', 'discord']"
+          />
+        </div>
+        <div class="flex justify-center">
+          <fa-icon
+            class="z-20 mt-auto mb-10"
+            :icon="['fas', 'arrow-down']"
+            style="color: #000; font-size: 40px"
           />
         </div>
       </div>

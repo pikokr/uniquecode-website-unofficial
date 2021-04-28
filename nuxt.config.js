@@ -59,6 +59,7 @@ export default {
   fontawesome: {
     icons: {
       brands: true,
+      solid: true,
     },
   },
 }
