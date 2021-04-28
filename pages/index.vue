@@ -1,8 +1,8 @@
 <template>
   <div>
     <div
-      class="absolute top-0 w-full h-full flex flex-col"
-      style="background: rgba(112, 112, 112, 0.122)"
+      class="w-full flex relative flex-col"
+      style="background: rgba(112, 112, 112, 0.122); height: 100vh"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
