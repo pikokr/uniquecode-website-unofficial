@@ -57,7 +57,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <div class="h-28" />
+    <div v-if="!noSpacing" class="h-28" />
   </div>
 </template>
 
@@ -66,6 +66,12 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'DefaultHeader',
+  props: {
+    noSpacing: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data: () => ({
     drawer: false,
     nav: [
