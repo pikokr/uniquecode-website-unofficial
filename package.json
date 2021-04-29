@@ -23,10 +23,11 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
+    "@nuxtjs/auth-next": "5.0.0-1618898588.9655d0e",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
-    "node-sass": "^5.0.0",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "sass": "^1.32.12"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
