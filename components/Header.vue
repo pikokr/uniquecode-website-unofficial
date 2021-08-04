@@ -27,6 +27,9 @@ export default {
   top: 25px;
   display: flex;
   justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
   & > div {
     max-width: 1000px;
     width: 100%;

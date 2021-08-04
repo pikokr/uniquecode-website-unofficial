@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="hero"></div>
+    <div class="hero">asdf</div>
   </div>
 </template>
 
@@ -20,5 +20,8 @@ export default {
   height: 700px;
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
