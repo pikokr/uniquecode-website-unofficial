@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div style="position: absolute; top: 25px; width: 100vw">
+        <div style="position: absolute; top: 25px; left: 0; width: 100vw">
             <Header />
         </div>
         <Home />
