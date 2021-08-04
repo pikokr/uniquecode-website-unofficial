@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <div>와아</div>
 </template>
 
 <script lang="ts">
