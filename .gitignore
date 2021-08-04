@@ -207,3 +207,5 @@ dist
 .pnp.*
 
 .idea
+
+.vercel

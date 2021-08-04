@@ -96,9 +96,6 @@ export default {
 
 .container {
     width: 100%;
-    position: absolute;
-    top: 25px;
-    display: flex;
     justify-content: center;
     padding-left: 30px;
     padding-right: 30px;
