@@ -1,6 +1,11 @@
 <template>
     <div>
-        <div class="hero">
+        <div
+            class="hero"
+            :style="{
+                backgroundImage: `url(${backgrounds[sliderIndex]})`,
+            }"
+        >
             <div class="content">
                 <div class="text-area">
                     <div class="text">
@@ -14,14 +19,35 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+
+export default Vue.extend({
     name: 'Home',
-}
+    data() {
+        return {
+            backgrounds: [
+                require('~/assets/views/home/svg/bg1.svg'),
+                require('~/assets/views/home/svg/bg2.svg'),
+            ],
+            sliderIndex: 0,
+            sliderInterval: setInterval(() => {
+                const i = this.$data.sliderIndex
+                if (this.$data.backgrounds.length <= i + 1) {
+                    this.$data.sliderIndex = 0
+                } else {
+                    this.$data.sliderIndex++
+                }
+            }, 3600),
+        }
+    },
+    beforeDestroy() {
+        clearInterval(this.sliderInterval)
+    },
+})
 </script>
 
 <style scoped lang="scss">
 .hero {
-    background-image: url('~/assets/views/home/svg/bg1.svg');
     width: 100vw;
     min-height: 700px;
     background-size: cover;
@@ -29,6 +55,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-image 0.6s;
 
     .content {
         display: flex;
